@@ -98,26 +98,26 @@ public class SignUpActivity extends AppCompatActivity {
         emailCall.enqueue(new Callback<List<User>>() {
             @Override
             public void onResponse(Call<List<User>> call, Response<List<User>> response) {
-                if (response.isSuccessful()) {
-                    List<User> users = response.body();
-                    if (users == null || users.size() == 0) {   //list trung email null
+                if (!response.isSuccessful()) {
+//                    List<User> users = response.body();
+//                    if (users == null || users.size() == 0) {   //list trung email null
                         usernameCall.enqueue(new Callback<List<User>>() { // check trung username
                             @Override
                             public void onResponse(Call<List<User>> call, Response<List<User>> response) {
-                                if (response.isSuccessful()) {
-                                    List<User> users = response.body();
-                                    if (users == null || users.size() == 0) {//list trung username null
+                                if (!response.isSuccessful()) {
+//                                    List<User> users = response.body();
+//                                    if (users == null || users.size() == 0) {//list trung username null
 
-                                        FirebaseAuth auth = FirebaseAuth.getInstance();
-                                        auth.createUserWithEmailAndPassword(email, password)
-                                                .addOnCompleteListener((task) -> {
-
-                                                    if (task.isSuccessful()) {
-                                                        //send verification link
-                                                        auth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                            @Override
-                                                            public void onComplete(@NonNull Task<Void> task) {
-                                                                if (task.isSuccessful()) {
+//                                        FirebaseAuth auth = FirebaseAuth.getInstance();
+//                                        auth.createUserWithEmailAndPassword(email, password)
+//                                                .addOnCompleteListener((task) -> {
+//
+//                                                    if (task.isSuccessful()) {
+//                                                        //send verification link
+//                                                        auth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+//                                                            @Override
+//                                                            public void onComplete(@NonNull Task<Void> task) {
+//                                                                if (task.isSuccessful()) {
 //                                                Cả email và username đều khả dụng, tiến hành đăng ký
                                                                     User inputuser = User.getInstance();
                                                                     inputuser.setFullname(fullname);
@@ -130,21 +130,21 @@ public class SignUpActivity extends AppCompatActivity {
                                                                     inputuser.setCreateAt(Calendar.getInstance().getTime());
                                                                     addUser(inputuser);
 
-                                                                } else {
-                                                                    Toast.makeText(SignUpActivity.this, "Lỗi đăng ký tài khoản!",
-                                                                            Toast.LENGTH_SHORT).show();
-                                                                }
-                                                            }
-                                                        });
-                                                    }
-                                                });
+//                                                                } else {
+//                                                                    Toast.makeText(SignUpActivity.this, "Lỗi đăng ký tài khoản!",
+//                                                                            Toast.LENGTH_SHORT).show();
+//                                                                }
+//                                                            }
+//                                                        });
+//                                                    }
+//                                                });
                                     } else {
                                         Toast.makeText(SignUpActivity.this, "Username đã tồn tại!",
                                                 Toast.LENGTH_SHORT).show();
                                     }
                                 }
 
-                            }
+//                            }
 
                             @Override
                             public void onFailure(Call<List<User>> call, Throwable t) {
@@ -156,7 +156,7 @@ public class SignUpActivity extends AppCompatActivity {
                                 Toast.LENGTH_SHORT).show();
                     }
                 }
-            }
+//            }
 
             @Override
             public void onFailure(Call<List<User>> call, Throwable t) {
