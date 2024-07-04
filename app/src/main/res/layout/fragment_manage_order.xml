@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.ManageOrderFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="373dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:background="@drawable/bg_txt"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:paddingVertical="5dp"
+                    android:paddingLeft="12dp"
+                    android:text="Trạng thái"
+                    android:textColor="@color/neutral_900"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/spinner_order_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:entries="@array/admin_order_array"
+                    android:padding="5dp" />
+
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/manage_order_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@null"
+                android:layout_marginTop="8dp"
+                android:dividerHeight="2dp"/>
+        </LinearLayout>
+</FrameLayout>

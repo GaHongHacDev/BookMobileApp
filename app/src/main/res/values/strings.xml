@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">GoodTome</string>
+
+    <!--    Gender types    -->
+    <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <!--    Search types    -->
+    <string-array name="search_array">
+        <item>Search by Text</item>
+        <item>Search by Voice</item>
+        <item>Search by Barcode</item>
+    </string-array>
+    <string name="title_activity_order_place">OrderPlace</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string-array name="admin_order_array">
+        <item>Tất cả</item>
+        <item>Chờ xác nhận</item>
+        <item>Đã xác nhận</item>
+        <item>Đang giao hàng</item>
+        <item>Giao hàng thành công</item>
+        <item>Giao hàng không thành công</item>
+        <item>Hủy đơn</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+</resources>

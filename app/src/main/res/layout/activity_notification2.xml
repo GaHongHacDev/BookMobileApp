@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@color/primary_050"
+    tools:context=".Activity.NotificationActivity">
+
+    <EditText
+        android:id="@+id/etTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:paddingLeft="18dp"
+        android:background="@drawable/bg_txt"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Tựa đề thông báo"
+        android:inputType="text"
+        android:paddingVertical="10dp"
+        android:textColor="@color/black"
+        android:textColorHighlight="#797183EA"
+        android:textColorLink="@color/mainColorLight"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/etMessage"
+        android:layout_margin="5dp"
+        android:background="@drawable/bg_txt"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="18dp"
+        android:textColor="@color/black"
+        android:textColorHighlight="#797183EA"
+        android:textColorLink="@color/mainColorLight"
+        android:textSize="20sp"
+        android:lines="12"
+        android:gravity="top|start"
+        android:hint="Nội dung thông báo"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:scrollbars="vertical" />
+
+    <Button
+        android:id="@+id/btnSendNoti"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_btn_solid"
+        android:textColor="@color/white"
+        android:layout_marginTop="8dp"
+        android:text="Gửi thông báo" />
+</LinearLayout>

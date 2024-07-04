@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/primary_050"
+    tools:context=".Activity.EditProductActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="24dp" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Chỉnh sửa thông tin"
+                android:textColor="@color/primary_700"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/edit_product_iv_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image_placeholder" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edit_product_txt_image_url"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_txt"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:hint="Hình ảnh"
+                    android:inputType="textPersonName"
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:textColorHighlight="#797183EA"
+                    android:textColorLink="@color/mainColorLight"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/edit_product_btn_show_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_btn_solid"
+                    android:text="Hiện"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <EditText
+                android:id="@+id/edit_profile_fullname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/bg_txt"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Họ và Tên"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="#797183EA"
+                android:textColorLink="@color/mainColorLight"
+                android:textSize="20sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+
+            <TextView
+                android:id="@+id/edit_profile_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/bg_txt"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:padding="10dp"
+                android:text="Email"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <EditText
+                android:id="@+id/edit_profile_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/bg_txt"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Số điện thoại"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="#797183EA"
+                android:textColorLink="@color/mainColorLight"
+                android:textSize="20sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/bg_txt"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/profile_tv_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:padding="5dp"
+                    android:text="Giới tính"
+                    android:textColor="@color/neutral_900"
+                    android:textSize="20sp" />
+
+                <Spinner
+                    android:id="@+id/profile_edt_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:padding="5dp" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+
+            <TextView
+                android:id="@+id/profile_tv_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/bg_txt"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:padding="10dp"
+                android:text="Username"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+
+            <EditText
+                android:id="@+id/edit_profile_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/bg_txt"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Địa chỉ"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="#797183EA"
+                android:textColorLink="@color/mainColorLight"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/edit_profile_btn_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_solid"
+                android:padding="5dp"
+                android:text="Lưu thông tin"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

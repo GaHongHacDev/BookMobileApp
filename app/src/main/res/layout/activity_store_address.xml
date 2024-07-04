@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/primary_050"
+    tools:context=".Fragment.ProfileFragment">
+
+
+    <ImageView
+        android:id="@+id/store_address_img"
+        android:layout_width="match_parent"
+        android:layout_height="231dp"
+        android:src="@drawable/fpt_lib"
+        tools:srcCompat="@tools:sample/backgrounds/scenic"
+        android:layout_marginBottom="30dp"/>
+
+    <TextView
+        android:id="@+id/store_address_text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Địa chỉ cửa hàng:"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/store_address_text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lô E2a-7, Đường D1, Khu Công nghệ cao, P.Long Thạnh Mỹ, Tp. Thủ Đức, TP.HCM."
+        android:layout_marginBottom="30dp"/>
+
+    <Button
+        android:id="@+id/store_map_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đường đến cửa hàng"
+        android:background="@drawable/bg_btn_solid"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+</LinearLayout>

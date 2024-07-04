@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/nav_chat"
+        android:title="Nhắn tin"
+        android:icon="@drawable/tabler_icon_chat_filled"
+        app:showAsAction="ifRoom"/>
+
+
+    <item
+        android:id="@+id/nav_notify"
+        android:title="Gửi thông báo"
+        android:icon="@drawable/tabler_icon_bell_filled"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/nav_report"
+        android:title="Báo cáo"
+        android:icon="@drawable/ic_baseline_ireport_24"
+        />
+    <item
+        android:id="@+id/nav_feedback"
+        android:title="Nhận xét"
+        android:icon="@drawable/ic_baseline_feedback_24"/>
+    <item
+        android:id="@+id/nav_chart"
+        android:title="Thống kê"
+        android:icon="@drawable/ic_baseline_bar_chart_24"/>
+
+
+</menu>

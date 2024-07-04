@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/user_header_messenger"
+        android:title="Trang chủ"
+        android:icon="@drawable/tabler_icon_chat_filled"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/user_header_notification"
+        android:title="Trang chủ"
+        android:icon="@drawable/tabler_icon_bell_filled"
+        app:showAsAction="ifRoom"
+        />
+</menu>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@color/primary_050"
+    tools:context=".Activity.AdminDetailOrderActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="105dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:maxLines="2"
+                android:padding="2dp"
+                android:text="Thời gian đặt:"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:fontFamily="@font/nunito_bold"/>
+            <TextView
+                android:id="@+id/admin_manage_order_item_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:padding="2dp"
+                android:text="date"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:maxLines="2"
+                android:padding="2dp"
+                android:text="Tổng thanh toán:"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:fontFamily="@font/nunito_bold"/>
+            <TextView
+                android:id="@+id/admin_manage_order_item_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:padding="2dp"
+                android:text="Price $"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:maxLines="2"
+                android:padding="2dp"
+                android:text="Số sản phẩm:"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:fontFamily="@font/nunito_bold"/>
+
+            <TextView
+                android:id="@+id/admin_manage_order_item_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:padding="2dp"
+                android:text="Number product"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:maxLines="2"
+                android:padding="2dp"
+                android:text="Trạng thái: "
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:fontFamily="@font/nunito_bold"/>
+
+            <TextView
+                android:id="@+id/admin_manage_order_item_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:padding="2dp"
+                android:text="status"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:maxLines="2"
+                android:padding="2dp"
+                android:text="Địa chỉ: "
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:fontFamily="@font/nunito_bold"/>
+
+            <TextView
+                android:id="@+id/admin_manage_order_item_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:padding="2dp"
+                android:text="Address"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="2">
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/btn_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_btn_solid_red"
+                android:text="Cancel"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_marginTop="12dp"
+                android:layout_marginHorizontal="5dp"
+                android:fontFamily="@font/nunito_bold"/>
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/btn_confirm_order"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_btn_solid"
+                android:text="Confirm"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_marginTop="12dp"
+                android:layout_marginHorizontal="5dp"
+                android:fontFamily="@font/nunito_bold"/>
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/admin_manage_order_item_list"
+            android:layout_width="match_parent"
+            android:layout_height="420dp"
+            android:layout_marginTop="16dp"
+            android:divider="@null"
+            android:dividerHeight="2dp" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

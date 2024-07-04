@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/primary_050"
+    tools:context=".Fragment.UserHomeFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+        <com.denzcoskun.imageslider.ImageSlider
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/imageSlider"
+            app:iss_auto_cycle="true"
+            app:iss_delay="1000"
+            >
+        </com.denzcoskun.imageslider.ImageSlider>
+    </androidx.cardview.widget.CardView>
+
+    <ListView
+        android:id="@+id/user_home_list_products"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="210dp"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        />
+</RelativeLayout>
