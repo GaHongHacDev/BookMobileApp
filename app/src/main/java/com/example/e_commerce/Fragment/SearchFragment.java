@@ -264,35 +264,38 @@ public class SearchFragment extends Fragment {
         }
     }
 
-    private void getAllBook_search(String text){
-        try{
+    private void getAllBook_search(String text) {
+        try {
             Call<List<Book>> call = bookService.getAll();
             call.enqueue(new Callback<List<Book>>() {
                 @Override
                 public void onResponse(Call<List<Book>> call, Response<List<Book>> response) {
                     List<Book> books = response.body();
-                    if (books == null){
+                    if (books == null) {
                         return;
                     }
                     Collections.reverse(books);
                     products.clear();
-                    for (Book book : books){
-                        String tempText = removeAccent(text).toLowerCase();
-                        if (removeAccent(book.getTitle().toLowerCase()).contains(tempText)
-                                || removeAccent(book.getAuthor().toLowerCase()).contains(tempText))
-                        products.add(book);
-                    };
+                    String tempText = removeAccent(text).toLowerCase();
+                    for (Book book : books) {
+                        String title = book.getTitle();
+                        String author = book.getAuthor();
+                        if ((title != null && removeAccent(title.toLowerCase()).contains(tempText)) ||
+                                (author != null && removeAccent(author.toLowerCase()).contains(tempText))) {
+                            products.add(book);
+                        }
+                    }
                     SearchFragment.UserSearchProductAdapter userSearchProductAdapter = new SearchFragment.UserSearchProductAdapter(products);
                     list_search.setAdapter(userSearchProductAdapter);
                 }
 
                 @Override
                 public void onFailure(Call<List<Book>> call, Throwable t) {
-
+                    Log.d("Error", t.getMessage());
                 }
             });
 
-        } catch (Exception e){
+        } catch (Exception e) {
             Log.d("Error", e.getMessage());
         }
     }
