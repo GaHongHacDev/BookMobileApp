@@ -8,7 +8,7 @@ android {
 
     signingConfigs {
         getByName("debug") {
-            storeFile = file("C:\\Users\\Razer\\.android\\debug.keystore")
+            storeFile = file("C:\\Users\\khoa\\.android\\debug.keystore")
         }
     }
 
