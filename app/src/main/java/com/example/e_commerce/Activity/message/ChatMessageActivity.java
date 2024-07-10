@@ -62,8 +62,7 @@ public class ChatMessageActivity extends AppCompatActivity {
 
         binding();
 
-        receiveName
-                = getIntent().getStringExtra("name");
+        receiveName = getIntent().getStringExtra("name");
         receiveProfilePic = getIntent().getStringExtra("profile_pic");
         chatKey = getIntent().getStringExtra("chat_key");
         receiveMobile = getIntent().getStringExtra("mobile");
@@ -74,9 +73,8 @@ public class ChatMessageActivity extends AppCompatActivity {
         if (!currentUser.getEmail().equals("admin")){
             chatKey = currentUser.getPhone_number();
             receiveName = "GoodTome";
-            receiveProfilePic = "https://i.pinimg.com/originals/7e/ce/c4/7ecec434137d1fcbe023db38e06c1260.jpg";
+            receiveProfilePic = "https://cdn.shopify.com/s/files/1/0528/3971/0891/files/MV5BODRlMGM0YzctOTc4Zi00ZjRhLWEzZmUtOTQ3YTIxNTYzODhiXkEyXkFqcGdeQXVyOTc4OTAwMjU_._V1_FMjpg_UX1920.jpg?v=1705338838";
             receiveMobile = "0000000000";
-
         }
         getUserMobile = currentUser.getPhone_number();
 

@@ -56,8 +56,14 @@ public class AdminDetailOrderItemActivity extends AppCompatActivity {
         String status =  n.getExtras().getString("status");
         String address =  n.getExtras().getString("address");
         int price =  n.getExtras().getInt("price");
+        int user_id =  n.getExtras().getInt("user_id");
+        String feedback =  n.getExtras().getString("feedback");
+        String payment_method =  n.getExtras().getString("payment_method");
         Date create_at =  (Date) n.getSerializableExtra("create_at");
+        Date date =  (Date) n.getSerializableExtra("date");
+        Double rate =  n.getExtras().getDouble("rate");
 
+        Order order = new Order(id, user_id, price, address, feedback, payment_method, rate, create_at, date, status);
 
         TextView product_status = (TextView) findViewById(R.id.admin_manage_order_item_status);
         TextView product_price = (TextView) findViewById(R.id.admin_manage_order_item_price);
@@ -85,14 +91,17 @@ public class AdminDetailOrderItemActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (status.equals("Chờ xác nhận")){
-                    updateStatusOrder(id, "Đã xác nhận");
+                    order.setStatus("Đã xác nhận");
+                    updateStatusOrder(id, "Đã xác nhận", order);
                     pushNotification("Thông báo từ GoodTome", "Đơn hàng đã xác nhận");
 
                 } else if (status.equals("Đã xác nhận")){
-                    updateStatusOrder(id, "Đang giao hàng");
+                    order.setStatus("Đang giao hàng");
+                    updateStatusOrder(id, "Đang giao hàng", order);
                     pushNotification("Thông báo từ GoodTome", "Đơn hàng đang giao");
                 } else if (status.equals("Đang giao hàng")){
-                    updateStatusOrder(id, "Giao hàng thành công");
+                    order.setStatus("Giao hàng thành công");
+                    updateStatusOrder(id, "Giao hàng thành công", order);
                     pushNotification("Thông báo từ GoodTome", "Đơn hàng giao thành công");
                 }
             }
@@ -153,10 +162,11 @@ public class AdminDetailOrderItemActivity extends AppCompatActivity {
         }
     }
 
-    private void updateStatusOrder(int id, String status){
-        Order tempOrder = new Order(status);
+    private void updateStatusOrder(int id, String status, Order order){
+//        Order tempOrder = new Order(status);
+//        tempOrder.setUser_id(id);
         try{
-            Call<Order> call = orderService.update(id, tempOrder);
+            Call<Order> call = orderService.update(id, order);
             call.enqueue(new Callback<Order>() {
                 @Override
                 public void onResponse(Call<Order> call, Response<Order> response) {
@@ -172,7 +182,7 @@ public class AdminDetailOrderItemActivity extends AppCompatActivity {
             });
 
         } catch (Exception e){
-            Log.d("Error", e.getMessage());
+            Log.d("Error", "************" + e.getMessage());
         }
     }
     class DetailOrderItemAdapter extends BaseAdapter {

@@ -154,7 +154,7 @@ public class UserManageOrderActivity extends AppCompatActivity {
             });
 
         } catch (Exception e){
-            Log.d("Error", e.getMessage());
+            Log.d("Error", "****************" + e.getMessage());
         }
     }
 

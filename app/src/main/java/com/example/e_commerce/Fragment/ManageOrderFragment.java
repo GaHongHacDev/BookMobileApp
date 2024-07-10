@@ -207,8 +207,14 @@ public class ManageOrderFragment extends Fragment {
                     intent.putExtra("id",orders.get(i).getOrder_id());
                     intent.putExtra("price",orders.get(i).getTotal_amount());
                     intent.putExtra("create_at",orders.get(i).getCreated_at());
+                    intent.putExtra("date",orders.get(i).getDate());
                     intent.putExtra("status",orders.get(i).getStatus());
                     intent.putExtra("address",orders.get(i).getAddress());
+                    intent.putExtra("user_id",orders.get(i).getUser_id());
+                    intent.putExtra("rate",orders.get(i).getRate());
+                    intent.putExtra("feedback",orders.get(i).getFeedback());
+                    intent.putExtra("payment_method",orders.get(i).getPayment_method());
+                    intent.putExtra("payment_method",orders.get(i).getPayment_method());
                     getActivity().startActivity(intent);
 //
                     Toast.makeText(getContext(), "CHAY", Toast.LENGTH_SHORT).show();
