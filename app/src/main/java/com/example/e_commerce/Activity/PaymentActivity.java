@@ -35,6 +35,7 @@ import com.google.firebase.messaging.FirebaseMessaging;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -177,6 +178,9 @@ public class PaymentActivity extends AppCompatActivity {
     }
 
     private void saveOrder() {
+        if (order.getDate() == null) {
+            order.setDate(new Date()); // Gán ngày hiện tại làm giá trị mặc định
+        }
         try {
             Call<Order> callO = orderService.create(order);
             callO.enqueue(new Callback<Order>() {
