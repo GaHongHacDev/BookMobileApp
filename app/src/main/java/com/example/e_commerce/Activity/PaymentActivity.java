@@ -3,10 +3,15 @@ package com.example.e_commerce.Activity;
 import static android.widget.Toast.LENGTH_LONG;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 import android.app.AlertDialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
@@ -25,6 +30,7 @@ import com.example.e_commerce.Repository.RepositoryBase;
 import com.example.e_commerce.Service.ICartService;
 import com.example.e_commerce.Service.IOrderItemService;
 import com.example.e_commerce.Service.IOrderService;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import org.json.JSONObject;
 
@@ -65,12 +71,51 @@ public class PaymentActivity extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-
                             saveOrder();
+                            sendNotification("Payment Successful", "Your payment was successful. Transaction ID: " + transactionId);
                         }
 
                     });
 
+                }
+                private void sendNotification(String title, String message) {
+                    FirebaseMessaging.getInstance().getToken().addOnCompleteListener(task -> {
+                        if (!task.isSuccessful()) {
+                            Log.w("FCM", "Fetching FCM registration token failed", task.getException());
+                            return;
+                        }
+
+                        // Get new FCM registration token
+                        String token = task.getResult();
+
+                        // Send a notification using the token
+                        // In a real-world application, you would send this token to your server
+                        // which would then send a push notification to the user's device.
+                        Log.d("FCM", "Token: " + token);
+
+                        // Here you would usually send the notification through your server
+                        // but for simplicity, we'll show a local notification for demonstration purposes
+
+                        // Use NotificationManager to show a notification
+                        NotificationManager notificationManager = null;
+                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+                            notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                        }
+
+                        // Create a notification channel for Android O and above
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                            NotificationChannel channel = new NotificationChannel("default", "Default Channel", NotificationManager.IMPORTANCE_DEFAULT);
+                            notificationManager.createNotificationChannel(channel);
+                        }
+
+                        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(PaymentActivity.this, "default")
+                                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                                .setContentTitle(title)
+                                .setContentText(message)
+                                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+                        notificationManager.notify(1, notificationBuilder.build());
+                    });
                 }
 
                 @Override
