@@ -40,5 +40,5 @@ public interface IUserService {
     Call<List<User>>  checkEmailAvailability(@Query("email") String email);
 
     @GET(resource)
-    Call<List<User>> findUsersByUsername(@Query("username") String username);
+    Call<List<User>> findUsersByUsername(@Query("username") String username);//chưa có cái này
 }

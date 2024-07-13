@@ -108,31 +108,31 @@ public class LoginActivity extends AppCompatActivity {
                                              myEdit.putString("current_user", userJson);
                                              myEdit.apply();
 
-                                             ApplicationUser.saveCurrentUser(LoginActivity.this, user);
-                                                         ApplicationUser.registerUserToFireBase(user);
-                                                         startActivity(new Intent(LoginActivity.this
-                                                                 , UserActivity.class));
-//
-
-//                                             FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-//                                             firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener((task) -> {
-//                                                 if (task.isSuccessful()) {
-//                                                     if (firebaseAuth.getCurrentUser().isEmailVerified()) {
-//                                                         ApplicationUser.saveCurrentUser(LoginActivity.this, user);
+//                                             ApplicationUser.saveCurrentUser(LoginActivity.this, user);
 //                                                         ApplicationUser.registerUserToFireBase(user);
 //                                                         startActivity(new Intent(LoginActivity.this
 //                                                                 , UserActivity.class));
 //
-//                                                     } else {
-//                                                         Toast.makeText(LoginActivity.this, "Xin hãy xác thực email trước khi đăng nhập.",
-//                                                                 Toast.LENGTH_SHORT).show();
-//                                                     }
-//
-//                                                 } else {
-//                                                     Toast.makeText(getApplicationContext(), "Đã có lỗi ở FireBase!"
-//                                                             , Toast.LENGTH_SHORT).show();
-//                                                 }
-//                                             });
+
+                                             FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+                                             firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener((task) -> {
+                                                 if (task.isSuccessful()) {
+                                                     if (firebaseAuth.getCurrentUser().isEmailVerified()) {
+                                                         ApplicationUser.saveCurrentUser(LoginActivity.this, user);
+                                                         ApplicationUser.registerUserToFireBase(user);
+                                                         startActivity(new Intent(LoginActivity.this
+                                                                 , UserActivity.class));
+
+                                                     } else {
+                                                         Toast.makeText(LoginActivity.this, "Xin hãy xác thực email trước khi đăng nhập.",
+                                                                 Toast.LENGTH_SHORT).show();
+                                                     }
+
+                                                 } else {
+                                                     Toast.makeText(getApplicationContext(), "Đã có lỗi ở FireBase!"
+                                                             , Toast.LENGTH_SHORT).show();
+                                                 }
+                                             });
                                          } else {
                                              Toast.makeText(getApplicationContext(), "Thông tin đăng nhập không chính xác!"
                                                      , Toast.LENGTH_SHORT).show();

@@ -73,7 +73,7 @@ public class ChatMessageActivity extends AppCompatActivity {
         if (!currentUser.getEmail().equals("admin")){
             chatKey = currentUser.getPhone_number();
             receiveName = "GoodTome";
-            receiveProfilePic = "https://cdn.shopify.com/s/files/1/0528/3971/0891/files/MV5BODRlMGM0YzctOTc4Zi00ZjRhLWEzZmUtOTQ3YTIxNTYzODhiXkEyXkFqcGdeQXVyOTc4OTAwMjU_._V1_FMjpg_UX1920.jpg?v=1705338838";
+            receiveProfilePic = "https://i.pinimg.com/736x/b6/b8/cc/b6b8ccbfa04f616bc17131533dcc8d62.jpg";
             receiveMobile = "0000000000";
         }
         getUserMobile = currentUser.getPhone_number();

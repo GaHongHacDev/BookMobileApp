@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "753770887872",
-    "project_id": "prm392-52326",
-    "storage_bucket": "prm392-52326.appspot.com"
+    "project_number": "988978953081",
+    "project_id": "prm392-team4",
+    "storage_bucket": "prm392-team4.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:753770887872:android:2162fb9434892556db0b25",
+        "mobilesdk_app_id": "1:988978953081:android:90cf57b814c53c98608da8",
         "android_client_info": {
           "package_name": "com.example.e_commerce"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAGffvMOWMj5W_rJeY-7jI3aXUK-avicIw"
+          "current_key": "AIzaSyBNpaj3HKlcTHM9pFiO7y_21KntCB9YS5U"
         }
       ],
       "services": {

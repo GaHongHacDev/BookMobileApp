@@ -99,25 +99,25 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<User>> call, Response<List<User>> response) {
                 if (!response.isSuccessful()) {
-//                    List<User> users = response.body();
-//                    if (users == null || users.size() == 0) {   //list trung email null
+                    List<User> users = response.body();
+                    if (users == null || users.size() == 0) {   //list trung email null
                         usernameCall.enqueue(new Callback<List<User>>() { // check trung username
                             @Override
                             public void onResponse(Call<List<User>> call, Response<List<User>> response) {
                                 if (!response.isSuccessful()) {
-//                                    List<User> users = response.body();
-//                                    if (users == null || users.size() == 0) {//list trung username null
+                                    List<User> users = response.body();
+                                    if (users == null || users.size() == 0) {//list trung username null
 
-//                                        FirebaseAuth auth = FirebaseAuth.getInstance();
-//                                        auth.createUserWithEmailAndPassword(email, password)
-//                                                .addOnCompleteListener((task) -> {
-//
-//                                                    if (task.isSuccessful()) {
-//                                                        //send verification link
-//                                                        auth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
-//                                                            @Override
-//                                                            public void onComplete(@NonNull Task<Void> task) {
-//                                                                if (task.isSuccessful()) {
+                                        FirebaseAuth auth = FirebaseAuth.getInstance();
+                                        auth.createUserWithEmailAndPassword(email, password)
+                                                .addOnCompleteListener((task) -> {
+
+                                                    if (task.isSuccessful()) {
+                                                        //send verification link
+                                                        auth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                            @Override
+                                                            public void onComplete(@NonNull Task<Void> task) {
+                                                                if (task.isSuccessful()) {
 //                                                Cả email và username đều khả dụng, tiến hành đăng ký
                                                                     User inputuser = User.getInstance();
                                                                     inputuser.setFullname(fullname);
@@ -130,21 +130,21 @@ public class SignUpActivity extends AppCompatActivity {
                                                                     inputuser.setCreateAt(Calendar.getInstance().getTime());
                                                                     addUser(inputuser);
 
-//                                                                } else {
-//                                                                    Toast.makeText(SignUpActivity.this, "Lỗi đăng ký tài khoản!",
-//                                                                            Toast.LENGTH_SHORT).show();
-//                                                                }
-//                                                            }
-//                                                        });
-//                                                    }
-//                                                });
+                                                                } else {
+                                                                    Toast.makeText(SignUpActivity.this, "Lỗi đăng ký tài khoản!",
+                                                                            Toast.LENGTH_SHORT).show();
+                                                                }
+                                                            }
+                                                        });
+                                                    }
+                                                });
                                     } else {
                                         Toast.makeText(SignUpActivity.this, "Username đã tồn tại!",
                                                 Toast.LENGTH_SHORT).show();
                                     }
                                 }
 
-//                            }
+                            }
 
                             @Override
                             public void onFailure(Call<List<User>> call, Throwable t) {
@@ -156,7 +156,7 @@ public class SignUpActivity extends AppCompatActivity {
                                 Toast.LENGTH_SHORT).show();
                     }
                 }
-//            }
+            }
 
             @Override
             public void onFailure(Call<List<User>> call, Throwable t) {
@@ -176,7 +176,7 @@ public class SignUpActivity extends AppCompatActivity {
                     if (response.body() != null) {
                         Toast.makeText(SignUpActivity.this, "Đăng ký thành công. Vui lòng kiểm tra email của bạn."
                                 , Toast.LENGTH_LONG).show();
-                       Intent intent = new Intent(SignUpActivity.this
+                        Intent intent = new Intent(SignUpActivity.this
                                 , LoginActivity.class);
                         startActivity(intent);
                     }
@@ -193,5 +193,3 @@ public class SignUpActivity extends AppCompatActivity {
         }
     }
 }
-
-

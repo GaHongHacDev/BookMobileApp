@@ -153,7 +153,6 @@ public class AdminDetailOrderItemActivity extends AppCompatActivity {
                 }
                 @Override
                 public void onFailure(Call<List<OrderItem>> call, Throwable t) {
-
                 }
             });
 
